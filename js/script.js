@@ -37,10 +37,16 @@ createApp({
   methods: {
     nextImg(index) {
       this.currentIndex++;
+      if (this.currentIndex === 5) {
+        this.currentIndex = 0;
+      }
     },
 
     prevImg(index) {
       this.currentIndex--;
+      if (this.currentIndex < 0) {
+        this.currentIndex = 5;
+      }
     },
   },
 }).mount('#app');
